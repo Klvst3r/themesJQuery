@@ -14,7 +14,7 @@ AppServ 9.3.0
 Link: https://www.appserv.org/en/
 
 # Objetivo:
-el objetivo es crear una herramienta para administrar de forma dinámica y facilitar la planeación de cursos o talleres, o alguna tematica que pueda emplearse en otras plaaformas dentro de una organización.
+El objetivo es crear una herramienta para administrar de forma dinámica y facilitar la planeación de cursos o talleres, o alguna tematica que pueda emplearse en otras plaaformas dentro de una organización.
 
 Se debe soportar el modo de trabajo drag and drop de elementos li que serán los temas en general o las lecciones a tratar, en cada lección se podran agregar un titulo y contenido que será opcional como el nombre del video que sera adjunto, documento o similar.
 
