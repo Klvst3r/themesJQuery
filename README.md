@@ -10,8 +10,13 @@ AppServ 9.3.0
     PHP 7.3.10
     MySQL 8.0.17
     phpMyAdmin 4.9.1 Support TLS,SSL or https For 64bit only
+    prepros 2021 -https://prepros.io/
+    Bootstrap  v5.1.1 - https://getbootstrap.com/
+    jQuery UI - jqueryui.com/sortable
+    Bee Framework - https://getbootstrap.com/
     
-Link: https://www.appserv.org/en/
+    Dev Enviroment Win Link: https://www.appserv.org/en/ / LAMP - Linux
+    
 
 # Objetivo:
 El objetivo es crear una herramienta para administrar de forma dinámica y facilitar la planeación de cursos o talleres, o alguna tematica que pueda emplearse en otras plaaformas dentro de una organización.
