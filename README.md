@@ -13,7 +13,7 @@ AppServ 9.3.0
     prepros 2021 -https://prepros.io/
     Bootstrap  v5.1.1 - https://getbootstrap.com/
     jQuery UI - jqueryui.com/sortable
-    Bee Framework - https://getbootstrap.com/
+    Bee Framework - https://github.com/Moxtrip69/Bee-Framework
     
     Dev Enviroment Win Link: https://www.appserv.org/en/ / LAMP - Linux
     

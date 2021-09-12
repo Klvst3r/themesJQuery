@@ -1,0 +1,139 @@
+Instalando y configurando el Framework Bee
+
+Descargable desde:
+
+    Bee Framework - https://github.com/Moxtrip69/Bee-Framework
+
+
+1. Archivo de configuracion del framwework en:
+	/project_name/bee/app/config/bee_config.php
+
+
+	Modificamos el basemap
+		define('BASEPATH'     , IS_LOCAL ? '/dev/themesJQuery/' : '/');
+
+2. Modificamos el nucleo del framework
+
+	/project_name/bee/app/core/settings.php
+
+3. Instalamos Composer en caso de no contar con el
+
+	sudo apt get install composer
+
+
+4. Dentro de la ruta del framework
+
+	/project_name/bee/app/$ composer install
+
+
+
+Nos genera el SIguiente error en Ubuntu:
+
+
+HP Fatal error:  Uncaught ArgumentCountError: array_merge() does not accept unknown named parameters in /usr/share/php/Composer/DependencyResolver/DefaultPolicy.php:84
+
+
+5. Reparamos:
+	Primera opcion
+		sudo composer sef-update
+
+6. Si no funciono
+		sudo composer update
+
+
+7. Volvemos a Instalar estando en la carpeta del proyecto:
+
+
+	composer install
+
+8. Revisamos la version de php
+
+ 	php -version
+PHP 8.0.10 (cli) (built: Aug 26 2021 15:50:07) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v4.0.10, Copyright (c) Zend Technologies
+    with Zend OPcache v8.0.10, Copyright (c), by Zend Technologies
+
+
+9. Intentamos corregir de la siguiente manera:
+
+	1. I fixe the like this:
+
+    sudo apt install wget php-cli php-zip unzip
+    
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    HASH="$(wget -q -O - https://composer.github.io/installer.sig)"
+    php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    Out put: Installer verified
+    sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+    Out put: All settings correct for using Composer
+    Downloading...
+    Composer (version 2.1.6) successfully installed to: /usr/local/bin/composer
+    Use it: php /usr/local/bin/composer
+
+It's Okay.
+
+You can try to tape composer.	
+
+Referencia:
+	https://github.com/composer/composer/issues/9097
+
+	https://wiki.php.net/rfc/named_params#internal_functions
+
+	https://github.com/composer/composer/releases/tag/1.10.10
+
+
+
+10. Se revisan las siguientes lineas:
+
+Deprecation Notice: Required parameter $path follows optional parameter $schema in /usr/share/php/JsonSchema/Constraints/UndefinedConstraint.php:62
+Deprecation Notice: Required parameter $path follows optional parameter $schema in /usr/share/php/JsonSchema/Constraints/UndefinedConstraint.php:108
+Deprecation Notice: Method ReflectionParameter::getClass() is deprecated in /usr/share/php/Composer/Repository/RepositoryManager.php:130
+Deprecation Notice: Method ReflectionParameter::getClass() is deprecated in /usr/share/php/Composer/Repository/RepositoryManager.php:130
+Loading composer repositories with package information
+Warning from https://repo.packagist.org: Support for Composer 1 is deprecated and some packages will not be available. You should upgrade to Composer 2. See https://blog.packagist.com/deprecating-composer-1-support/
+
+
+Actualizar a Composer 2
+
+
+Instalar composer 2 en Ubuntu 20.04 y derivados
+mayo 17, 2021 - Klvst3r
+ 
+ 
+Composer es un manejador de dependencias para PHP, es decir, podemos instalar bibliotecas que cumplan con funciones específicas y si dichas bibliotecas dependen de otras, composer se encargará de instalarlo por nosotros (algo así como los gestores de paquetes para GNU/LInux).
+
+Dentro de los repositorios encontramos la versión 1 de composer, la cual podemos instalar como cualquier aplicación:
+
+sudo apt install composer
+
+Sin embargo recomiendo instalar la versión, primero porque es más rápida que la versión1 y segundo porque cada vez que usemos composer nos va a mostrar un recordatorio para instalar la 2 si no la tenemos.
+
+Para instalarlo vamos a la web oficial donde veremos los pasos a seguir. Sin embargo, los comandos de ejemplo instalan composer en la carpeta donde los ejecutemos, es decir, de forma local; lo ideal es instalarlo de forma global para poder ejecutarlo desde cualquier ubicación. En la propia documentación nos muestra los parámetros que debemos agregarle para cambiar la ruta y el nombre, esto último es importante para no agregar el sufijo .php para llamar al comando.
+
+Para poder ejecutar estos comandos debemos tener instalado previamente PHP. Si cumplimos con este requisitos solo debemos ejecutar los comandos en el orden que nos muestra la web.
+
+-----------------------------------------------------------------------------
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+
+sudo php composer-setup.php --install-dir=/usr/bin --filename=composer
+
+php -r "unlink('composer-setup.php');"
+
+-----------------------------------------------------------------------------
+
+
+En la primera línea descargamos el instalador. En la segunda verificamos que se haya descargado correctamente (por lo cual es opcional). En la tercera línea instalamos composer en /usr/bin para que se esté disponible de forma global y le ponemos el nombre omitiendo el sufijo .php. En la última línea borramos el instalador descargado.
+
+Una vez completado estos pasos podemos verificar que todo esté correcto, para ello lo llamamos escribiendo composer y debería mostrarse en pantalla la versión y un listado de argumentos.
+
+
+Referencias:
+https://blonder413.wordpress.com/2021/05/17/instalar-composer-2-en-ubuntu-20-04-y-derivados/
+https://getcomposer.org/download/
+
