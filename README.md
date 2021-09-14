@@ -14,7 +14,8 @@ AppServ 9.3.0
     Bootstrap  v5.1.1 - https://getbootstrap.com/
     jQuery UI - jqueryui.com/sortable
     Bee Framework - https://github.com/Moxtrip69/Bee-Framework
-    
+    FlatUIColors - https://flatuicolors.com/
+        
     Dev Enviroment Win Link: https://www.appserv.org/en/ / LAMP - Linux
     
 
